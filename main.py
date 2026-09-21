@@ -44,7 +44,7 @@ async def predict_disease(file: UploadFile = File(...)):
         confidence = float(np.max(predictions))
 
         return JSONResponse(content={
-            "disease": class_names[str(predicted_index)],
+            "disease": class_names[predicted_index],
             "confidence": round(confidence, 2)
         })
 
